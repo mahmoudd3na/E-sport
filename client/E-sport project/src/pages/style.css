@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "bungee";
+    src: url("../assets/fonts/BungeeShade-Regular.ttf");
+}
+
+.container {
+    display: flex;
+}
+
+
+h1 {
+    font-family: "bungee";
+    font-size: 60px;
+    margin: auto;
+    color: #444;
+}

@@ -3,7 +3,9 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import './App.css';
 import Layout from './components/Layout';
 import Login from './pages/Login';
-
+import Home from './pages/Home';
+import Tournaments from './pages/Tournaments';
+import Leaderboard from './pages/Leaderboard';
 function App() {
 
   const router = createBrowserRouter([
@@ -11,24 +13,20 @@ function App() {
       path: "/",
       element: <Layout />,
       errorElement: <Error />,
-      // children: [
-      //   {
-      //     index: true,
-      //     element: <Dashboard />
-      //   },
-      // {
-      //   path: "Favorites",
-      //   element: <Favorites />
-      // },
-      // {
-      //   path: "Forecast",
-      //   element: <Forecast />
-      // },
-      // {
-      //   path: "SignIn",
-      //   element: <SignIn />
-      // }
-      // ]
+      children: [
+        {
+          index: true,
+          element: <Home />
+        },
+        {
+          path: "Tournaments",
+          element: <Tournaments />
+        },
+        {
+          path: "Leaderboard",
+          element: <Leaderboard />
+        }
+      ]
     }, {
       path: "/login",
       element: <Login />
