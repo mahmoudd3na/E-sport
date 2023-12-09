@@ -1,6 +1,6 @@
 .logo {
-    width: 220px;
-    height: 144px;
+    width: 200px;
+    height: 124px;
     margin-top: 10px;
     cursor: pointer;
     margin-left: 25px;
@@ -8,17 +8,19 @@
 
 .nav-bar {
     display: flex;
-    height: 160px;
+    height: auto;
     background-color: #DBDBDB;
     justify-content: space-between;
     padding-bottom: 20px;
     padding-top: 10px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border-bottom: #848383 3px solid;
 }
 
 .links {
-    margin-top: 60px;
-    display: flex;
+    margin-top: 80px;
+
+    /* display: flex; */
 }
 
 .links a {
@@ -32,7 +34,7 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     text-align: center;
     font-weight: 600;
-    font-size: 22px;
+    font-size: 18px;
     color: #444;
 }
 
@@ -42,7 +44,7 @@
 }
 
 .search-logo {
-    margin-top: 80px;
+    margin-top: 60px;
     margin-right: 35px;
 
 

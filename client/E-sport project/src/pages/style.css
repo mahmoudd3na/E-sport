@@ -8,9 +8,11 @@
 }
 
 
-h1 {
+
+
+.header1 {
     font-family: "bungee";
-    font-size: 60px;
+    font-size: 30px;
     margin: auto;
     color: #444;
 }

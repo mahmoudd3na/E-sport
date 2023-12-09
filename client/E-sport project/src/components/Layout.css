@@ -9,6 +9,12 @@ body {
     height: 1000px;
     margin: auto;
     background-color: #DBDBDB;
+
+}
+
+:root {
+    --primary-color: #3498db;
+    --font-size: 16px;
 }
 
 a {
