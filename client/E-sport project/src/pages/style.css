@@ -14,11 +14,36 @@
     justify-content: space-between;
 }
 
+.open-container {
+    /* border-right: #848383 2px solid; */
+    margin: 10px;
+    padding: 10px;
+}
+
 .add-tournament {
-    width: 200px;
-    height: 180px;
-    background-color: #ad432c;
+    width: 140px;
+    height: 120px;
+    background-color: #084c3f;
     border-radius: 10px;
+    margin-right: 200px;
+    margin-top: 100px;
+}
+
+.add-tournament:hover {
+    background-color: rgb(3, 35, 30);
+    cursor: pointer;
+}
+
+.vector-icon {
+    margin-top: 30px;
+    margin-left: 40px;
+    height: 60px;
+    width: 60px
+}
+
+.add-results {
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -26,8 +51,8 @@
 
 .tour-header {
     font-family: "poppins2";
-    padding: 1px 400px 10px 10px;
-    margin: 50px 10px 10px 10px;
+    padding: 10px 300px 10px 10px;
+    margin: 40px 10px 10px 10px;
     background-color: #084c3f;
     border-radius: 3px;
     font-size: 30px;
@@ -36,14 +61,14 @@
 
 }
 
-table {
+.open-tour {
     /* width: 100%; */
     border-collapse: collapse;
     margin-top: 25px;
     margin-left: 10px;
 }
 
-th, td {
+.open-tour th, td {
     border: 1px solid #ddd;
     padding: 15px;
     padding-right: 68px;
@@ -51,11 +76,11 @@ th, td {
 
 }
 
-tbody {
+.open-tour tbody {
     cursor: pointer;
 }
 
 
-th {
+.open-tour th {
     background-color: #f2f2f2;
 }

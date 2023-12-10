@@ -1,11 +1,67 @@
-const users = [
+export const users = [
     {
-        id: 455,
+        id: 1,
         name: "fathi abu khouk",
         record: "13-5",
-        picture: "./",
+        picture: "/user1.webp",
         tournaments: 45,
         level: 5,
+    },
+    {
+        id: 2,
+        name: "mahmoud shobaki",
+        record: "13-5",
+        picture: "/user2.jpeg",
+        tournaments: 45,
+        level: 5,
+    },
 
-    }
+    {
+        id: 3,
+        name: "fathi abu khouk",
+        record: "13-5",
+        picture: "/user3.jpeg",
+        tournaments: 45,
+        level: 5,
+    },
+    {
+        id: 4,
+        name: "fathi abu khouk",
+        record: "13-5",
+        picture: "/user4.jpeg",
+        tournaments: 45,
+        level: 5,
+    },
+    {
+        id: 5,
+        name: "fathi abu khouk",
+        record: "13-5",
+        picture: "/user5.jpg",
+        tournaments: 45,
+        level: 5,
+    },
+    {
+        id: 6,
+        name: "fathi abu khouk",
+        record: "13-5",
+        picture: "/user6.jpg",
+        tournaments: 45,
+        level: 5,
+    },
+    {
+        id: 7,
+        name: "fathi abu khouk",
+        record: "13-5",
+        picture: "/user7.jpeg",
+        tournaments: 45,
+        level: 5,
+    },
+    {
+        id: 8,
+        name: "fathi abu khouk",
+        record: "13-5",
+        picture: "/user8.jpeg",
+        tournaments: 45,
+        level: 5,
+    },
 ]

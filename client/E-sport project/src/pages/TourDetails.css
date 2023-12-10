@@ -1,0 +1,179 @@
+.draw-container {
+    border: 3px solid grey;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "poppins";
+}
+
+.participant {
+    font-family: "poppins";
+}
+
+.users-participants img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid black;
+    transition: transform 0.3s ease;
+    /* Add a smooth transition effect */
+}
+
+.users-participants img:hover {
+    transform: scale(1.2);
+    /* Scale the element to 120% on hover */
+
+}
+
+.partici {
+    display: flex;
+}
+
+.users-participants {
+    margin-top: 20px;
+    padding: 10px 30px 10px 30px;
+    cursor: pointer;
+}
+
+.users-participants p {
+    text-align: center;
+
+}
+
+.users-participants p:hover {
+    text-decoration: underline;
+}
+
+@font-face {
+    font-family: "poppins";
+    src: url("../assets/fonts/Poppins/Poppins-Medium.ttf");
+}
+
+.tour-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    margin-top: 30px;
+    /* border: 2px solid #848383; */
+    padding: 20px;
+}
+
+.info-tour {
+    margin-top: 35px;
+    margin-right: 90px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.organizer img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid black;
+    margin-left: 20px;
+}
+
+.organizer p {
+    text-align: center;
+    font-weight: bold;
+}
+
+.organizer {
+    /* border: 2px solid grey; */
+}
+
+/* .box {
+    width: 50px;
+    height: 50px;
+    background-color: grey;
+}
+
+.draw-box {
+    width: 1100px;
+    height: 700px;
+    background-color: blanchedalmond;
+}
+
+.box-a {
+    margin-left: 10px;
+}
+
+.box-b {
+    margin-left: 10px;
+}
+
+.box-c {
+    margin-left: 10px;
+}
+
+.box-d {
+    margin-left: 10px;
+}
+
+.box-e {
+    margin-right: 10px;
+}
+
+.box-f {
+    margin-right: -10px;
+}
+
+.box-g {
+    margin-right: 10px;
+}
+
+.box-h {
+    margin-right: 10px;
+} */
+
+.tournament-diagram {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto;
+    z-index: 1;
+
+}
+
+/* .round {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+} */
+
+.match {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.team {
+    width: 80px;
+    height: 70px;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    margin-right: 350px;
+    margin-left: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.diagram {
+    position: absolute;
+    top: 770px;
+    width: 750px;
+    height: 450px;
+}

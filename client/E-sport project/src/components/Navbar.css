@@ -21,7 +21,7 @@
     margin-top: 80px;
 } */
 
-.header-links a {
+.nav-bar a {
     padding: 20px;
     background: #FFF;
     text-align: center;
@@ -33,7 +33,7 @@
     margin: 20px;
 }
 
-.header-links a:hover {
+.nav-bar a:hover {
     border-radius: 20px;
     padding: 10px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -41,7 +41,7 @@
     color: white;
 }
 
-.active-bar {
+.active-bar1 {
     border-radius: 20px;
     padding: 10px;
     /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
@@ -64,6 +64,7 @@
     width: 50px;
     height: 50px;
     margin-left: 60px;
+    cursor: pointer;
 
 }
 

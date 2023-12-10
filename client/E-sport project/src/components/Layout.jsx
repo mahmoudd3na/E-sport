@@ -6,13 +6,14 @@ import "./Layout.css";
 
 export default function Layout() {
     return (
-
-        <div className='layout'>
-            <Navbar />
-            <Outlet />
+        <>
+            <div className='layout'>
+                <Navbar />
+                <Outlet />
+            </div>
             <Footer />
 
-        </div>
+        </>
 
     )
 }
