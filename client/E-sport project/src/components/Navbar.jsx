@@ -3,21 +3,20 @@ import { NavLink } from 'react-router-dom'
 import "./Navbar.css"
 
 export default function Navbar() {
+
     const toggleActivity = (isActive) => {
-        return isActive ? { backgroundColor: "#FFA41B", color: "white" } : undefined
+        return isActive ? "active-bar" : undefined
     }
     return (
         <div className="nav-bar">
-            <img className='logo' src="/logo.png" />
-            <div className='links'>
+            <div className='left-bar header-links'>
                 <NavLink>Home</NavLink>
-                <NavLink to="Tournaments" style={({ isActive }) => toggleActivity(isActive)}>Tournaments</NavLink>
-                <NavLink to="Leaderboard" style={({ isActive }) => toggleActivity(isActive)}>Leaderboard</NavLink>
+                <NavLink to="Tournaments" className={({ isActive }) => toggleActivity(isActive)}>Tournaments</NavLink>
             </div>
-            <div className='search-logo'>
-                <img className='search-icon' src="/searchIcon.png" />
+            <h1 className='logo'>Esport</h1>
+            <div className='right-bar header-links'>
+                <NavLink to="Leaderboard" className={({ isActive }) => toggleActivity(isActive)}>Leaderboard</NavLink>
                 <img className="user-icon" src="/userIcon.png" />
-
             </div>
         </div>
     )

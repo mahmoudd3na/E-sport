@@ -1,11 +1,12 @@
 import { useState } from 'react'
-import { RouterProvider, createBrowserRouter } from "react-router-dom"
+import { RouterProvider, createBrowserRouter, Route } from "react-router-dom"
 import './App.css';
 import Layout from './components/Layout';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Tournaments from './pages/Tournaments';
 import Leaderboard from './pages/Leaderboard';
+import TourDetails from './TourDetails';
 function App() {
 
   const router = createBrowserRouter([
@@ -20,11 +21,15 @@ function App() {
         },
         {
           path: "Tournaments",
-          element: <Tournaments />
+          element: <Tournaments />,
         },
         {
           path: "Leaderboard",
           element: <Leaderboard />
+        },
+        {
+          path: "Tournaments/:id",
+          element: <TourDetails />
         }
       ]
     }, {
@@ -34,9 +39,10 @@ function App() {
   ])
 
   return (
-    <>
-      <RouterProvider router={router} />
-    </>
+
+    <RouterProvider router={router}>
+
+    </RouterProvider>
   )
 }
 

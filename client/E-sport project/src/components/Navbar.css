@@ -1,69 +1,83 @@
 .logo {
-    width: 200px;
-    height: 124px;
-    margin-top: 10px;
     cursor: pointer;
-    margin-left: 25px;
+    font-size: 90px;
+    font-family: "bebas";
+    margin-top: 10px;
+
+
 }
 
 .nav-bar {
     display: flex;
-    height: auto;
-    background-color: #DBDBDB;
-    justify-content: space-between;
-    padding-bottom: 20px;
-    padding-top: 10px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: white;
+    justify-content: space-evenly;
+    padding-bottom: 2px;
     border-bottom: #848383 3px solid;
+    height: 120px;
+    color: #003731;
 }
 
-.links {
+/* .links {
     margin-top: 80px;
+} */
 
-    /* display: flex; */
-}
-
-.links a {
-    padding-bottom: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-top: 15px;
-    margin: 20px 30px 20px 30px;
-    border-radius: 20px;
+.header-links a {
+    padding: 20px;
     background: #FFF;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     text-align: center;
     font-weight: 600;
     font-size: 18px;
-    color: #444;
+    color: #003731;
+    font-family: "poppins";
+    padding: 10px;
+    margin: 20px;
 }
 
-.links a:hover {
-    background-color: #FFA41B;
-    color: white
+.header-links a:hover {
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background-color: #003731;
+    color: white;
 }
 
-.search-logo {
-    margin-top: 60px;
-    margin-right: 35px;
-
-
+.active-bar {
+    border-radius: 20px;
+    padding: 10px;
+    /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
+    background-color: #003731;
+    color: white;
 }
 
-.search-icon {
-    width: 35px;
-    height: 35px;
-    margin-right: 35px;
-    cursor: pointer;
+.left-bar {
+    margin-top: 55px;
+}
+
+.right-bar {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .user-icon {
     width: 50px;
     height: 50px;
-    cursor: pointer;
+    margin-left: 60px;
+
 }
 
 .user-icon:hover {
     background-color: #75747472;
     border-radius: 25px;
+}
+
+@font-face {
+    font-family: "bebas";
+    src: url("../assets/fonts/BebasNeue-Regular.ttf");
+}
+
+@font-face {
+    font-family: "poppins";
+    src: url("../assets/fonts/Poppins/Poppins-Medium.ttf");
 }

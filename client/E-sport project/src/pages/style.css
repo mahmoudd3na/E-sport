@@ -3,16 +3,59 @@
     src: url("../assets/fonts/BungeeShade-Regular.ttf");
 }
 
-.container {
+@font-face {
+    font-family: "poppins2";
+    src: url("../assets/fonts/Poppins/Poppins-Black.ttf");
+}
+
+.tour-container {
     display: flex;
+    /* border-top: #848383 3px solid; */
+    justify-content: space-between;
+}
+
+.add-tournament {
+    width: 200px;
+    height: 180px;
+    background-color: #ad432c;
+    border-radius: 10px;
 }
 
 
 
 
-.header1 {
-    font-family: "bungee";
+.tour-header {
+    font-family: "poppins2";
+    padding: 1px 400px 10px 10px;
+    margin: 50px 10px 10px 10px;
+    background-color: #084c3f;
+    border-radius: 3px;
     font-size: 30px;
-    margin: auto;
-    color: #444;
+    /* margin: auto; */
+    color: white;
+
+}
+
+table {
+    /* width: 100%; */
+    border-collapse: collapse;
+    margin-top: 25px;
+    margin-left: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    padding-right: 68px;
+    text-align: left;
+
+}
+
+tbody {
+    cursor: pointer;
+}
+
+
+th {
+    background-color: #f2f2f2;
 }
