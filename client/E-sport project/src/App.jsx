@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Tournaments from './pages/Tournaments';
 import Leaderboard from './pages/Leaderboard';
 import TourDetails from './pages/TourDetails';
+import CreateTour from './pages/CreateTour';
 function App() {
 
   const router = createBrowserRouter([
@@ -31,10 +32,10 @@ function App() {
           path: "Tournaments/:id",
           element: <TourDetails />
         },
-        // {
-        //   path: "users/:id",
-        //   element: <TourDetails />
-        // },
+        {
+          path: "Create",
+          element: <CreateTour />
+        },
 
       ]
     }, {

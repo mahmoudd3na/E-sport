@@ -2,10 +2,9 @@ export const users = [
     {
         id: 1,
         name: "fathi abu khouk",
-        record: "13-5",
+        won: 0,
         picture: "/user1.webp",
         tournaments: 45,
-        level: 5,
     },
     {
         id: 2,
@@ -59,6 +58,14 @@ export const users = [
     {
         id: 8,
         name: "fathi abu khouk",
+        record: "13-5",
+        picture: "/user8.jpeg",
+        tournaments: 45,
+        level: 5,
+    },
+    {
+        id: 12,
+        name: "khara",
         record: "13-5",
         picture: "/user8.jpeg",
         tournaments: 45,

@@ -7,8 +7,10 @@
     font-family: "poppins";
 }
 
+
 .participant {
     font-family: "poppins";
+    margin-top: 0;
 }
 
 .users-participants img {
@@ -21,10 +23,13 @@
     /* Add a smooth transition effect */
 }
 
+.draw-container h2 {
+    font-size: 40px;
+    font-family: "bungee";
+}
+
 .users-participants img:hover {
     transform: scale(1.2);
-    /* Scale the element to 120% on hover */
-
 }
 
 .partici {
@@ -33,13 +38,14 @@
 
 .users-participants {
     margin-top: 20px;
-    padding: 10px 30px 10px 30px;
+    padding: 10px 30px 0px 30px;
     cursor: pointer;
+    height: 185px;
 }
 
 .users-participants p {
     text-align: center;
-
+    width: 80px
 }
 
 .users-participants p:hover {
@@ -49,6 +55,16 @@
 @font-face {
     font-family: "poppins";
     src: url("../assets/fonts/Poppins/Poppins-Medium.ttf");
+}
+
+@font-face {
+    font-family: "bungee";
+    src: url("../assets/fonts/BungeeShade-Regular.ttf");
+}
+
+@font-face {
+    font-family: "bebas";
+    src: url("../assets/fonts/BebasNeue-Regular.ttf");
 }
 
 .tour-info {
@@ -79,86 +95,35 @@
 .organizer p {
     text-align: center;
     font-weight: bold;
+    width: 130px
 }
-
-.organizer {
-    /* border: 2px solid grey; */
-}
-
-/* .box {
-    width: 50px;
-    height: 50px;
-    background-color: grey;
-}
-
-.draw-box {
-    width: 1100px;
-    height: 700px;
-    background-color: blanchedalmond;
-}
-
-.box-a {
-    margin-left: 10px;
-}
-
-.box-b {
-    margin-left: 10px;
-}
-
-.box-c {
-    margin-left: 10px;
-}
-
-.box-d {
-    margin-left: 10px;
-}
-
-.box-e {
-    margin-right: 10px;
-}
-
-.box-f {
-    margin-right: -10px;
-}
-
-.box-g {
-    margin-right: 10px;
-}
-
-.box-h {
-    margin-right: 10px;
-} */
 
 .tournament-diagram {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    max-width: 800px;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* flex-direction: column; */
+    width: 1000px;
     margin: 0 auto;
     z-index: 1;
-
+    margin-bottom: 100px;
+    padding-top: 50px;
+    height: 800px;
+    position: relative;
 }
 
-/* .round {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-} */
-
-.match {
+/* .match {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
-}
+} */
 
 .team {
-    width: 80px;
-    height: 70px;
-    padding: 8px;
+    width: 75px;
+    height: 65px;
+    /* padding: 8px; */
     text-align: center;
-    border: 1px solid #ddd;
+    border: 5px solid black;
     border-radius: 4px;
     background-color: #f9f9f9;
     margin-right: 10px;
@@ -169,11 +134,107 @@
     justify-content: center;
     align-items: center;
     font-size: 20px;
+    font-weight: bold;
+    background-color: #dbdbdb;
 }
 
 .diagram {
     position: absolute;
-    top: 770px;
+    top: 950px;
     width: 750px;
     height: 450px;
+    /* z-index: 2; */
+}
+
+.enroll {
+    padding: 0px 20px 0px 20px;
+    background-color: #066b59;
+    color: white;
+    cursor: pointer;
+    font-size: 25px;
+    font-family: "poppins";
+    border-radius: 3px;
+    position: absolute;
+    top: 1325px;
+    z-index: 3;
+    font-weight: bold;
+}
+
+.enroll:hover {
+    background-color: #023630;
+
+
+}
+
+.user-a {
+    top: 23px;
+    position: absolute;
+    right: 515px;
+
+}
+
+.user-b {
+    position: absolute;
+    top: 155px;
+    right: 515px;
+}
+
+.user-c {
+    position: absolute;
+    top: 300px;
+    right: 515px;
+
+}
+
+.user-d {
+    position: absolute;
+    top: 435px;
+    right: 515px;
+
+}
+
+.user-e {
+    position: absolute;
+    top: 23px;
+    left: 512px;
+
+
+}
+
+.user-f {
+    position: absolute;
+    top: 155px;
+    left: 512px;
+
+}
+
+.user-g {
+    position: absolute;
+    top: 300px;
+    left: 512px;
+
+
+
+}
+
+.user-h {
+    position: absolute;
+    top: 435px;
+    left: 512px;
+}
+
+.tournament-diagram img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.tournament-diagram img:hover {
+    width: 95%;
+    height: 95%;
+}
+
+.filled {
+    overflow: hidden;
+    /* background-color: red; */
 }
