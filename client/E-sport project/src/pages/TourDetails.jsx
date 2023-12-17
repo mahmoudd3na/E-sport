@@ -61,13 +61,20 @@ export default function TourDetails() {
                     <p>Place : {tour.place}</p>
                 </div>
                 <div className='organizer'>
-                    <p>Organizer</p>
+                    <p className='header-org'>Organizer</p>
                     <img src={organizer.picture} alt={organizer.name} />
                     <p>{organizer.name}</p>
                 </div>
             </div>
 
-            {participants.length > 0 && <Diagram draw={tour.draw} />}
+            {participants.length > 0 &&
+                <Diagram
+                    participants={participants}
+                    draw={tour.draw}
+                    round2={tour.round2}
+                    round3={tour.round3}
+                    winner={tour.winner}
+                />}
 
             {/* {isOrganizer && isTournamentStarted && (
             * Render the controls for the organizer to determine winners/losers 

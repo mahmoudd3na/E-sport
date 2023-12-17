@@ -2,7 +2,6 @@ export const users = [
     {
         id: 1,
         name: "fathi abu khouk",
-        won: 0,
         picture: "/user1.webp",
         tournaments: 45,
     },

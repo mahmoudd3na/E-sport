@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './style.css';
 import { tournaments } from '../constants/tournaments';
 import Tournament from '../components/Tournament';
+import axios from "axios";
 
 export default function Tournaments() {
   const openTournaments = tournaments.filter(tournament => tournament.status === 'open');
+
+
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    // Fetch data from the backend when the component mounts
+    axios.get('http://localhost:3001/tournaments')
+      .then(response => setItems(response.data))
+      .catch(error => console.error('Error fetching data:', error));
+  }, []); // Empty dependency array means this effect runs once when the component mounts
+  console.log("tournaments: ", items);
+
 
   const renderedTournaments = openTournaments.map(tournament => (
     <Tournament key={tournament.id} data={tournament} />

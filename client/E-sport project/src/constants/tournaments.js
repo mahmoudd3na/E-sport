@@ -10,20 +10,23 @@ export const tournaments =
             organizer: 4,
             status: "open",
             draw: { a: 2, b: 3, c: 1, d: 5, e: 6, f: 7, g: 8, h: 4 },
-            round2: { a: 1, b: 0, c: 3, d: 0, e: 5, f: 0, g: 8, h: 0 },
-            round3: { a: 55, h: 0 }
+            round2: { a: 2, b: 0, c: 0, d: 5, e: 6, f: 0, g: 8, h: 0 },
+            round3: { a: 0, b: 0, c: 0, d: 5, e: 6, f: 0, g: 0, h: 0 },
+            winner: 5,
         },
         {
             id: 44,
-            name: "the legends cup ",
+            name: "the legends cup",
             users: [1],
             place: "bethlhem",
             day: "friday",
             time: "8:00 pm",
             organizer: 3,
             status: "open",
-            draw: { a: 0, b: 0, c: 0, d: 0, e: 0, f: 0, g: 0, h: 0 },
-            second: {}
+            draw: { a: 1, b: 0, c: 0, d: 0, e: 0, f: 0, g: 0, h: 0 },
+            round2: {},
+            round3: {},
+            winner: 0,
         },
         {
             id: 76,
@@ -34,7 +37,10 @@ export const tournaments =
             time: "2:00 pm",
             organizer: 2,
             status: "open",
-            draw: { a: 5, b: 0, c: 2, d: 3, e: 8, f: 0, g: 1, h: 7 }
+            draw: { a: 5, b: 0, c: 2, d: 3, e: 8, f: 0, g: 0, h: 0 },
+            round2: 0,
+            round3: 0,
+            winner: 0,
         },
         {
             id: 6,
