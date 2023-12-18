@@ -1,0 +1,31 @@
+.home-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+    /* Adjust values as needed */
+}
+
+@font-face {
+    font-family: "pilot";
+    src: url("../assets/fonts/RusdyIbra-yw8wd.ttf");
+}
+
+.home-container h1 {
+    font-family: "pilot";
+    color: white;
+}
+
+.header1 {
+    position: absolute;
+    top: 700px;
+    left: 500px;
+    font-size: 100px;
+}
+
+.header2 {
+    position: absolute;
+    top: 1000px;
+    left: 400px;
+    font-size: 100px;
+}

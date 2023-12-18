@@ -5,9 +5,11 @@ import Layout from './components/Layout';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Tournaments from './pages/Tournaments';
-import Leaderboard from './pages/Leaderboard';
+import Results from './pages/Results';
 import TourDetails from './pages/TourDetails';
 import CreateTour from './pages/CreateTour';
+import Register from './pages/Register';
+import UserProfile from './components/UserProfile';
 function App() {
 
   const router = createBrowserRouter([
@@ -25,8 +27,8 @@ function App() {
           element: <Tournaments />,
         },
         {
-          path: "Leaderboard",
-          element: <Leaderboard />
+          path: "Results",
+          element: <Results />
         },
         {
           path: "Tournaments/:id",
@@ -36,12 +38,20 @@ function App() {
           path: "Create",
           element: <CreateTour />
         },
+        {
+          path: "/login",
+          element: <Login />
+        },
+        {
+          path: "/register",
+          element: <Register />
+        }, {
+          path: "users/:id",
+          element: <UserProfile />
+        }
 
       ]
-    }, {
-      path: "/login",
-      element: <Login />
-    }
+    },
   ])
 
   return (

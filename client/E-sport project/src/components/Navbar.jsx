@@ -1,24 +1,20 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import "./Navbar.css"
-
+import React from 'react';
+import { NavLink, Link } from 'react-router-dom';
+import "./Navbar.css";
+import Login from '../pages/Login';
 
 export default function Navbar() {
-
-    const toggleActivity = (isActive) => {
-        return isActive ? "active-bar1" : undefined
-    }
     return (
         <div className="nav-bar">
             <div className='left-bar'>
-                <NavLink>Home</NavLink>
-                <NavLink to="Tournaments" className={({ isActive }) => toggleActivity(isActive)}>Tournaments</NavLink>
+                <NavLink className="nav-link" exact to="/" >Home</NavLink>
+                <NavLink className="nav-link" to="/tournaments" activeClassName="active">Tournaments</NavLink>
             </div>
-            <h1 className='logo'>Esport</h1>
+            <Link to="/"> <h1 className='logo'>Esport</h1></Link>
             <div className='right-bar'>
-                <NavLink to="Leaderboard" className={({ isActive }) => toggleActivity(isActive)}>Leaderboard</NavLink>
-                <img className="user-icon" src="/userIcon.png" />
+                <NavLink className="nav-link" to="/results" activeClassName="active">Results</NavLink>
+                <Link to="/login"><img className="user-icon" src="/userIcon.png" alt="User Icon" /></Link>
             </div>
         </div>
-    )
+    );
 }

@@ -1,16 +1,14 @@
-/* Font-face for Poppins font */
 @font-face {
     font-family: "poppins";
     src: url("../assets/fonts/Poppins/Poppins-Medium.ttf");
 }
 
-/* Styles for the tournament form */
-.custom-tournament-form {
+.signin-container {
     background-color: #f0f0f0;
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     padding: 30px;
-    max-width: 400px;
+    width: 300px;
     text-align: center;
     margin: auto;
     margin-top: 30px;
@@ -18,13 +16,18 @@
     font-family: "poppins";
 }
 
-.custom-tournament-form h2 {
+.signin-container h2 {
     color: #333;
     margin-bottom: 20px;
     font-size: 30px;
 }
 
-.custom-form-label {
+.form-group {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.form-group label {
     display: block;
     font-size: 14px;
     margin-bottom: 8px;
@@ -32,18 +35,18 @@
     text-align: left;
 }
 
-.custom-form-input {
+.form-group input {
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
-    margin-bottom: 0px;
 }
 
-.custom-submit-button {
+.signin-container button {
     width: 100%;
+    /* Set the width to 100% */
     background-color: #3498db;
     color: white;
     padding: 10px 15px;
@@ -55,14 +58,13 @@
     margin-top: 10px;
 }
 
-.custom-submit-button:hover {
+.signin-container button:hover {
     background-color: #2980b9;
 }
 
 .signup-link {
     color: #555;
     font-size: 14px;
-    margin-top: 20px;
 }
 
 .signup-link a {
@@ -73,4 +75,9 @@
 
 .signup-link a:hover {
     text-decoration: underline;
+}
+
+.error-message {
+    font-size: 15px;
+    color: red;
 }

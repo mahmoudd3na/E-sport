@@ -8,6 +8,11 @@
     src: url("../assets/fonts/Poppins/Poppins-Black.ttf");
 }
 
+/* @font-face {
+    font-family: "poppins2";
+    src: url("../assets/fonts/Poppins/");
+} */
+
 .tour-container {
     display: flex;
     /* border-top: #848383 3px solid; */
@@ -18,6 +23,7 @@
     /* border-right: #848383 2px solid; */
     margin: 10px;
     padding: 10px;
+    width: 600px;
 
 }
 
@@ -26,8 +32,8 @@
     height: 120px;
     background-color: #084c3f;
     border-radius: 10px;
-    margin-right: 200px;
-    margin-top: 100px;
+    margin-right: 20px;
+    margin-top: 60px;
 }
 
 .add-tournament:hover {
@@ -44,23 +50,45 @@
 
 .add-results {
     display: flex;
-    flex-direction: column;
+}
+
+
+
+.add-results a {
+    display: flex;
+}
+
+.add-results h2 {
+    margin-top: 62px;
+    border-radius: 4px;
+    margin-right: 110px;
+    font-family: "poppins";
+    background-color: #ddd;
+    padding: 40px;
+
 }
 
 
 
 
+
 .tour-header {
-    font-family: "bebas";
+    letter-spacing: 2px;
+    font-family: "pilot";
     padding: 10px 10px 10px 10px;
     margin: 40px 10px 10px 10px;
     background-color: #084c3f;
     border-radius: 3px;
     font-size: 50px;
     align-items: center;
+    text-align: center;
     /* margin: auto; */
     color: white;
 
+}
+
+.closed-container {
+    margin-right: 70px;
 }
 
 .open-tour {
@@ -70,10 +98,29 @@
     margin-left: 10px;
 }
 
+.closed-tour {
+    /* width: 100%; */
+    border-collapse: collapse;
+    margin-top: 25px;
+
+}
+
 .open-tour th, td {
     border: 1px solid #ddd;
     padding: 15px;
-    padding-right: 68px;
+    padding-right: 48px;
+    font-family: "poppins";
+    font-size: 15px;
+    text-align: left;
+
+}
+
+.closed-tour th, td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    padding-right: 48px;
+    font-family: "poppins";
+    font-size: 15px;
     text-align: left;
 
 }
@@ -82,7 +129,21 @@
     cursor: pointer;
 }
 
+.closed-tour tbody {
+    cursor: pointer;
+}
+
 
 .open-tour th {
     background-color: #f2f2f2;
+}
+
+.closed-tour th {
+    background-color: #f2f2f2;
+}
+
+.closed-add {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

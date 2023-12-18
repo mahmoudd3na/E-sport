@@ -1,10 +1,14 @@
 .logo {
     cursor: pointer;
     font-size: 90px;
-    font-family: "bebas";
+    font-family: "modern";
     margin-top: 10px;
 
+}
 
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .nav-bar {
@@ -17,11 +21,7 @@
     color: #003731;
 }
 
-/* .links {
-    margin-top: 80px;
-} */
-
-.nav-bar a {
+.nav-link {
     padding: 20px;
     background: #FFF;
     text-align: center;
@@ -33,7 +33,7 @@
     margin: 20px;
 }
 
-.nav-bar a:hover {
+.nav-link:hover {
     border-radius: 20px;
     padding: 10px;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -41,10 +41,9 @@
     color: white;
 }
 
-.active-bar1 {
+.nav-link.active {
     border-radius: 20px;
     padding: 10px;
-    /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
     background-color: #003731;
     color: white;
 }
@@ -76,6 +75,11 @@
 @font-face {
     font-family: "bebas";
     src: url("../assets/fonts/BebasNeue-Regular.ttf");
+}
+
+@font-face {
+    font-family: "modern";
+    src: url("../assets/fonts/ModernWarfare-OV7KP.ttf");
 }
 
 @font-face {

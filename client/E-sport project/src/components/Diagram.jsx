@@ -1,72 +1,94 @@
-import React from 'react'
+import React from 'react';
 import { render } from 'react-dom';
 import { Link } from 'react-router-dom';
-// remove this constant after finishing the project
-export default function Diagram({ participants, draw, round2, round3, winner }) {
-    // var randomFloat = Math.random();
-    // var randomInteger = Math.floor(Math.random() * (b - a + 1)) + a;
+
+export default function Diagram({
+    participants,
+    draw,
+    round2,
+    round3,
+    winner
+}) {
     let renderedDiagram = [];
     let renderedRound2 = [];
     let renderedRound3 = [];
     let renderedWinner;
 
-    // draw[key] is the id of the user
-
-
+    // Winners and Losers for each round
+    let round2Winners = [];
+    let round3Winners = [];
+    let finalWinner;
 
     for (let key in draw) {
         if (draw[key] === 0) {
-            renderedDiagram.push(<div class={`team user-${key}`}>{`${key.toUpperCase()}`}</div>);
-        }
-        else {
-            //here we are gonna put the fetched data of the user
-            let user = participants.find(user => user.id === draw[key]);
-            renderedDiagram.push(<div class={`team user-${key} filled`}>
-                <img src={user.picture} />
-            </div>);
+            renderedDiagram.push(
+                <div class={`team user-${key}`}>{`${key.toUpperCase()}`}</div>
+            );
+        } else {
+            let user = participants.find((user) => user._id === draw[key]);
+            if (!user) {
+                renderedDiagram.push(
+                    <div class={`team user-${key} loading`}>Loading...</div>
+                );
+            } else {
+                renderedDiagram.push(
+                    <div class={`team user-${key} filled`}>
+                        <img src={user.picture} alt="profile-picture" />
+                    </div>
+                );
+            }
         }
     }
 
-    // drawing round 2 
-    if (Object.keys(round2).length !== 0) {
+    // drawing round 2
+    if (round2 !== null) {
         let i = 1;
         for (let key in round2) {
             if (round2[key] !== 0) {
-                let user = participants.find(user => user.id === round2[key]);
-                renderedRound2.push(<div class={`team user-${i}`}>
-                    <img src={user.picture} />
-                </div>);
+                let user = participants.find((user) => user._id === round2[key]);
+                renderedRound2.push(
+                    <div class={`team user-${i}`}>
+                        <img src={user.picture} />
+                    </div>
+                );
+                round2Winners.push(user);
                 i++;
             }
         }
-        if (Object.keys(round3).length !== 0) {
+
+        if (round3 !== null) {
             let i = 1;
             for (let key in round3) {
                 if (round3[key] !== 0) {
-                    let user = participants.find(user => user.id === round3[key]);
-                    renderedRound3.push(<div class={`team final-${i}`}>
-                        <img src={user.picture} />
-                    </div>);
+                    let user = participants.find((user) => user._id === round3[key]);
+                    renderedRound3.push(
+                        <div class={`team final-${i}`}>
+                            <img src={user.picture} />
+                        </div>
+                    );
+                    round3Winners.push(user);
                     i++;
                 }
-
             }
         }
-        if (winner !== 0) {
+        // console.log("winner: ", winner)
+        // console.log("user_id ", user._id)
+        if (winner !== null) {
+            let user = participants.find((user) => user._id === winner);
 
-            let user = participants.find(user => user.id === winner);
-            renderedWinner = (
-                <div>
-                    <div class={`team winner`}>
-                        <img src={user.picture} />
-                    </div>
-                    <p className='winner-name'>{user.name}</p>
-                </div>
-            );
+            if (user) {
+                finalWinner = (
+                    <>
+                        <div className={`team winner`}>
+                            <img src={user.picture} alt="Winner" />
+                        </div>
+                        <p className="winner-name">{user.username}</p>
+                    </>
+                );
+            } else {
+                // Handle the case when no user is found with the specified _id
+            }
         }
-
-
-
 
     }
 
@@ -76,35 +98,17 @@ export default function Diagram({ participants, draw, round2, round3, winner }) 
             <div class="tournament-diagram">
                 {renderedDiagram}
 
-                {Object.keys(round2).length !== 0 &&
-                    renderedRound2
-                }
+                {round2 !== null && renderedRound2}
 
-                {Object.keys(round3).length !== 0 &&
+                {round3 !== null && <div>{renderedRound3}</div>}
+                <p className="final-match">The Final</p>
+                {winner !== null && (
                     <div>
-                        {renderedRound3}
+                        <p className="winner-header">Winner</p>
+                        {finalWinner}
                     </div>
-                }
-                <p className='final-match'>The Final</p>
-                {
-                    winner !== 0 &&
-                    <div>
-                        <p className='winner-header'>Winner</p>
-                        {renderedWinner}
-                    </div>
-                }
-
-
-
-
+                )}
             </div>
-            {/* should check if this user is enrolled or not ,if the id of the user is in the tournament participants the enroll button shouldn't be displayed */}
-            {
-                (participants.length < 8) &&
-                <div className='enroll'><p>Join now</p></div>
-            }
-
         </>
-
-    )
+    );
 }

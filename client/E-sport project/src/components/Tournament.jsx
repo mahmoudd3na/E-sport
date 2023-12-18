@@ -1,17 +1,22 @@
-import React from 'react'
-import "./Tournament.css";
+import React from 'react';
 import { Link } from 'react-router-dom';
-
+import './Tournament.css';
 
 export default function Tournament({ data }) {
     return (
-
         <tr>
-            <td> <Link to={`/Tournaments/${data.id}`}>{data.name}</Link></td>
-            <td>{data.id}</td>
-            <td>{data.place}</td>
-            <td>{data.time}</td>
+            <td>
+                <Link to={`/Tournaments/${data._id}`}>{data.name}</Link>
+            </td>
+            <td className='td-parti'>
+                <Link to={`/Tournaments/${data._id}`}>{`${data.users.length}/8`}</Link>
+            </td>
+            <td>
+                <Link to={`/Tournaments/${data._id}`}>{data.place}</Link>
+            </td>
+            <td>
+                <Link to={`/Tournaments/${data._id}`}>{data.time}</Link>
+            </td>
         </tr>
-
-    )
+    );
 }
