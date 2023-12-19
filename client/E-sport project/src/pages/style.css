@@ -17,6 +17,7 @@
     display: flex;
     /* border-top: #848383 3px solid; */
     justify-content: space-between;
+    min-height: 1000px;
 }
 
 .open-container {

@@ -21,7 +21,7 @@ export default function TourDetails() {
     const fetchTournamentData = async () => {
         try {
             setLoading(true);
-            const response = await fetch(`http://localhost:3001/tournaments/${id}`); // Replace 'your_tournament_api_endpoint' with the actual tournament API endpoint
+            const response = await fetch(`${import.meta.env.VITE_BASE_URL}/tournaments/${id}`); // Replace 'your_tournament_api_endpoint' with the actual tournament API endpoint
             const tournamentData = await response.json();
             console.log("tournament data:", tournamentData)
             setTour(tournamentData);
@@ -30,7 +30,7 @@ export default function TourDetails() {
             const participantUserIds = tournamentData.users;
             console.log("participant users id", participantUserIds);
             const participantPromises = participantUserIds.map(async userId => {
-                const userResponse = await fetch(`http://localhost:3001/users/${userId}`); // Replace 'your_user_api_endpoint' with the actual user API endpoint
+                const userResponse = await fetch(`${import.meta.env.VITE_BASE_URL}/users/${userId}`); // Replace 'your_user_api_endpoint' with the actual user API endpoint
                 const userData = await userResponse.json();
                 return userData;
             });
@@ -41,7 +41,7 @@ export default function TourDetails() {
             setParticipants(participantUsers);
 
             const organizerUserId = tournamentData.organizer;
-            const organizerResponse = await fetch(`http://localhost:3001/users/${organizerUserId}`);
+            const organizerResponse = await fetch(`${import.meta.env.VITE_BASE_URL}/users/${organizerUserId}`);
             const organizerUserData = await organizerResponse.json();
             console.log(organizerUserData);
 
@@ -70,7 +70,7 @@ export default function TourDetails() {
 
         const token = localStorage.getItem('accessToken');
         try {
-            const response = await fetch(`http://localhost:3001/tournaments/${id}/join`, {
+            const response = await fetch(`${import.meta.env.VITE_BASE_URL}/tournaments/${id}/join`, {
                 method: 'PUT',
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -96,7 +96,7 @@ export default function TourDetails() {
         if (tour.status === "closed") {
 
             try {
-                const response = await fetch(`http://localhost:3001/tournaments/${id}`, {
+                const response = await fetch(`${import.meta.env.VITE_BASE_URL}/tournaments/${id}`, {
                     method: 'PUT',
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
@@ -122,7 +122,7 @@ export default function TourDetails() {
         if (tour.status === "closed") {
 
             try {
-                const response = await fetch(`http://localhost:3001/tournaments/${id}`, {
+                const response = await fetch(`${import.meta.env.VITE_BASE_URL}/tournaments/${id}`, {
                     method: 'PUT',
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
@@ -149,7 +149,7 @@ export default function TourDetails() {
 
             console.log("winner :", tourWinner)
             try {
-                const response = await fetch(`http://localhost:3001/tournaments/${id}`, {
+                const response = await fetch(`${import.meta.env.VITE_BASE_URL}/tournaments/${id}`, {
                     method: 'PUT',
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('accessToken')}`,

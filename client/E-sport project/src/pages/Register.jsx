@@ -45,7 +45,7 @@ export default function Register() {
             const base64Image = event.target.result;
 
             try {
-                const response = await axios.post('http://localhost:3001/users/register', {
+                const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/users/register`, {
                     username: formData.username,
                     email: formData.email,
                     password: formData.password,

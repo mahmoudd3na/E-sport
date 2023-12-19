@@ -23,14 +23,14 @@ export default function Login() {
 
     const fetchUserData = async (token) => {
         try {
-            const userTokenData = await axios.get('http://localhost:3001/users/current', {
+            const userTokenData = await axios.get(`${import.meta.env.VITE_BASE_URL}/users/current`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
             });
 
             const user = userTokenData.data;
-            const userPictureData = await axios.get(`http://localhost:3001/users/${user.id}`);
+            const userPictureData = await axios.get(`${import.meta.env.VITE_BASE_URL}/users/${user.id}`);
             const userPicture = userPictureData.data.picture;
 
             setUserData({
@@ -65,7 +65,7 @@ export default function Login() {
         };
 
         try {
-            const response = await axios.post('http://localhost:3001/users/login', data);
+            const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/users/login`, data);
             const token = response.data.accessToken;
             localStorage.setItem('accessToken', token);
 

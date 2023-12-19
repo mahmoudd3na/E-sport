@@ -19,7 +19,7 @@ const CreateTour = () => {
             const token = localStorage.getItem('accessToken');
             if (token) {
                 try {
-                    const response = await fetch('http://localhost:3001/users/current', {
+                    const response = await fetch(`${import.meta.env.VITE_BASE_URL}/users/current`, {
                         method: 'GET',
                         headers: {
                             'Authorization': `Bearer ${token}`,

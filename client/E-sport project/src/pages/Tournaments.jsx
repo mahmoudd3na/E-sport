@@ -11,7 +11,7 @@ export default function Tournaments() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:3001/tournaments')
+      .get(`${import.meta.env.VITE_BASE_URL}/tournaments`)
       .then((response) => {
         setTournaments(response.data);
         setLoading(false);

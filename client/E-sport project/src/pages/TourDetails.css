@@ -88,6 +88,8 @@
     font-weight: bold;
     font-size: 18px;
     display: inline;
+    display: inline-block;
+
 }
 
 .organizer img {
@@ -127,11 +129,7 @@
     /* background-color: red; */
 }
 
-/* .match {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-} */
+
 
 .team {
     width: 75px;
