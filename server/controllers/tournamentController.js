@@ -70,7 +70,7 @@ const updateTournament = asyncHandler(async (req, res) => {
         res.status(400);
         throw new Error("You should be an Organizer");
     }
-    if (req.body.winner !== null) {
+    if (req.body.winner) {
         req.body.status = "ended"
     }
     const updatedTournament = await Tournament.findByIdAndUpdate(
