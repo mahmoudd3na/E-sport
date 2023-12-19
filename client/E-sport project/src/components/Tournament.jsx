@@ -5,7 +5,7 @@ import './Tournament.css';
 export default function Tournament({ data }) {
     return (
         <tr>
-            <td>
+            <td className='td-name'>
                 <Link to={`/Tournaments/${data._id}`}>{data.name}</Link>
             </td>
             <td className='td-parti'>

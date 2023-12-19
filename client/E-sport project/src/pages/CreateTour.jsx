@@ -133,7 +133,7 @@ const CreateTour = () => {
                         Create Tournament
                     </button>
                 </form>) : (
-                <div>
+                <div className='tournament-created'>
                     <h2>Tournament Created!</h2>
                     <p>Name: {createdTournament.name}</p>
                     <p>Place: {createdTournament.place}</p>

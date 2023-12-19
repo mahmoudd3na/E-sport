@@ -191,7 +191,7 @@ export default function TourDetails() {
                 <div className='partici'>{participants.map(player => (
                     <div key={player.id} className='users-participants'>
                         <img src={player.picture} alt={player.name} />
-                        <p>{player.name}</p>
+                        <p>{player.username}</p>
                     </div>
                 ))}</div>
             )}

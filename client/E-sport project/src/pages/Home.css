@@ -19,8 +19,11 @@
 .header1 {
     position: absolute;
     top: 700px;
-    left: 500px;
+    left: 510px;
     font-size: 100px;
+    /* background-color: #0037319b; */
+    border-radius: 4px;
+    ;
 }
 
 .header2 {
@@ -28,4 +31,15 @@
     top: 1000px;
     left: 400px;
     font-size: 100px;
+}
+
+.description {
+    position: absolute;
+    top: 860px;
+    left: 485px;
+    color: white;
+    font-family: "poppins";
+    font-size: 20px;
+    width: 600px;
+    text-align: center;
 }

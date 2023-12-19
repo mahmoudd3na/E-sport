@@ -3,5 +3,11 @@ tr:hover {
 }
 
 .td-parti {
-    text-align: center;
+    /* text-align: center; */
+    padding-left: 20px;
+}
+
+.td-name {
+    /* font-weight: bold; */
+    font-size: 16px;
 }

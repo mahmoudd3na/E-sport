@@ -147,3 +147,11 @@
     flex-direction: column;
     align-items: center;
 }
+
+.finished-tour {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+
+
+}

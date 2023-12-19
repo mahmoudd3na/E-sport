@@ -94,14 +94,14 @@ const TournamentBracket = ({ participants, draw, round2, round3, winner, handleU
                 <>
                     <div className='bracket-container'>
                         {Object.entries(round1Matches).map(([matchId, match]) => (
-                            <div key={matchId}>
-                                <p>{`Match ${matchId}: ${match.player1} vs ${match.player2}`}</p>
+                            <div key={matchId} className='match-container'>
+                                <p>{`${matchId}: ${match.player1} vs ${match.player2}`}</p>
                                 <p>{`Winner: ${match.winner || 'Undecided'}`}</p>
-                                <button onClick={() => updateWinner(matchId, match.player1)}>Select ${match.player1}</button>
-                                <button onClick={() => updateWinner(matchId, match.player2)}>Select ${match.player2}</button>
+                                <button onClick={() => updateWinner(matchId, match.player1)}>Select {match.player1}</button>
+                                <button onClick={() => updateWinner(matchId, match.player2)}>Select {match.player2}</button>
                             </div>
                         ))}
-                        <button onClick={handleSubmit} >
+                        <button onClick={handleSubmit} className='bracket-btn'>
                             Submit Winners
                         </button>
                     </div>
@@ -112,14 +112,14 @@ const TournamentBracket = ({ participants, draw, round2, round3, winner, handleU
                 <>
                     <div className='bracket-container'>
                         {Object.entries(round2Matches).map(([matchId, match]) => (
-                            <div key={matchId}>
-                                <p>{`Match ${matchId}: ${match.player1} vs ${match.player2}`}</p>
+                            <div key={matchId} className='match-container'>
+                                <p>{`${matchId}: ${match.player1} vs ${match.player2}`}</p>
                                 <p>{`Winner: ${match.winner || 'Undecided'}`}</p>
-                                <button onClick={() => updateWinner2(matchId, match.player1)}>Select ${match.player1}</button>
-                                <button onClick={() => updateWinner2(matchId, match.player2)}>Select ${match.player2}</button>
+                                <button onClick={() => updateWinner2(matchId, match.player1)}>Select {match.player1}</button>
+                                <button onClick={() => updateWinner2(matchId, match.player2)}>Select {match.player2}</button>
                             </div>
                         ))}
-                        <button onClick={handleSubmit2}>
+                        <button onClick={handleSubmit2} className='bracket-btn'>
                             Submit Winners
                         </button>
                     </div>
@@ -130,14 +130,14 @@ const TournamentBracket = ({ participants, draw, round2, round3, winner, handleU
                 <>
                     <div className='bracket-container'>
                         {Object.entries(round3Matches).map(([matchId, match]) => (
-                            <div key={matchId}>
-                                <p>{`Match ${matchId}: ${match.player1} vs ${match.player2}`}</p>
+                            <div key={matchId} className='match-container'>
+                                <p>{`${matchId}: ${match.player1} vs ${match.player2}`}</p>
                                 <p>{`Winner: ${match.winner || 'Undecided'}`}</p>
-                                <button onClick={() => updateWinner3(matchId, match.player1)}>Select ${match.player1}</button>
-                                <button onClick={() => updateWinner3(matchId, match.player2)}>Select ${match.player2}</button>
+                                <button onClick={() => updateWinner3(matchId, match.player1)}>Select {match.player1}</button>
+                                <button onClick={() => updateWinner3(matchId, match.player2)}>Select {match.player2}</button>
                             </div>
                         ))}
-                        <button onClick={handleSubmit3}>
+                        <button onClick={handleSubmit3} className='bracket-btn'>
                             Submit Winners
                         </button>
                     </div>

@@ -5,7 +5,7 @@
 
 .footer {
     height: 130px;
-    background-color: #003731;
+    background-color: #004840;
     width: 1260px;
     margin: auto;
     font-size: 30px;
@@ -18,10 +18,13 @@
 .footer {
     color: #fff;
     text-align: center;
+
 }
 
 .social-media {
-    margin-bottom: 20px;
+    margin-top: 10px;
+    padding-top: 15px;
+    margin-bottom: 10px;
 }
 
 .social-media a {

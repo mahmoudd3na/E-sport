@@ -329,6 +329,8 @@
     font-size: 20px;
     position: absolute;
     top: 670px;
-    left: 440px;
+    left: 421px;
     font-weight: bold;
+    width: 150px;
+    text-align: center;
 }
