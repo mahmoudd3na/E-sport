@@ -71,14 +71,17 @@ export default function Diagram({
                 }
             }
         }
-        // console.log("winner: ", winner)
-        // console.log("user_id ", user._id)
+
         if (winner !== null) {
             let user = participants.find((user) => user._id === winner);
 
             if (user) {
                 finalWinner = (
                     <>
+                        <div className='world-cup'>
+                            <img src="/world-cup.png" />
+
+                        </div>
                         <div className={`team winner`}>
                             <img src={user.picture} alt="Winner" />
                         </div>
@@ -86,7 +89,6 @@ export default function Diagram({
                     </>
                 );
             } else {
-                // Handle the case when no user is found with the specified _id
             }
         }
 

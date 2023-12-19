@@ -10,16 +10,15 @@ export default function Tournaments() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch data from the backend when the component mounts
     axios
       .get('http://localhost:3001/tournaments')
       .then((response) => {
         setTournaments(response.data);
-        setLoading(false); // Set loading to false when data is fetched
+        setLoading(false);
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
-        setLoading(false); // Set loading to false on error
+        setLoading(false);
       });
   }, []);
 
@@ -67,7 +66,7 @@ export default function Tournaments() {
             </div>
 
             <div className="closed-container">
-              <h1 className="tour-header">Upcoming Tournaments</h1>
+              <h1 className="tour-header2">Upcoming Tournaments</h1>
               <table className="closed-tour">
                 <thead>
                   <tr>

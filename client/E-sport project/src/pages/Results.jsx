@@ -11,16 +11,15 @@ const Results = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Fetch data from the backend when the component mounts
         axios
             .get('http://localhost:3001/tournaments')
             .then((response) => {
                 setTournaments(response.data);
-                setLoading(false); // Set loading to false when data is fetched
+                setLoading(false);
             })
             .catch((error) => {
                 console.error('Error fetching data:', error);
-                setLoading(false); // Set loading to false on error
+                setLoading(false);
             });
     }, []);
     const endedTournaments = tournaments.filter((tournament) => tournament.status === 'ended');
@@ -30,9 +29,9 @@ const Results = () => {
     ));
 
     return (
-        <div className="closed-container finished-tour">
-            <h1 className="tour-header">Finished Tournaments</h1>
-            <table className="closed-tour">
+        <div className="finished-container">
+            <h1 className="tour-header3">Finished Tournaments</h1>
+            <table className="finished-tour">
                 <thead>
                     <tr>
                         <th>Name</th>

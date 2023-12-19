@@ -121,7 +121,7 @@
     z-index: 1;
     margin-bottom: 100px;
     padding-top: 50px;
-    min-height: 600px;
+    min-height: 720px;
     height: auto;
     position: relative;
     /* background-color: red; */
@@ -162,11 +162,11 @@
 }
 
 .enroll {
-    padding: 0px 20px 0px 20px;
+    padding: 0px 10px 0px 10px;
     background-color: #066b59;
     color: white;
     cursor: pointer;
-    font-size: 25px;
+    font-size: 20px;
     font-family: "poppins";
     border-radius: 3px;
     position: absolute;
@@ -176,11 +176,11 @@
 }
 
 .enroll-above {
-    padding: 0px 20px 0px 20px;
+    padding: 0px 10px 0px 10px;
     background-color: #066b59;
     color: white;
     cursor: pointer;
-    font-size: 25px;
+    font-size: 20px;
     font-family: "poppins";
     border-radius: 3px;
     position: absolute;
@@ -191,8 +191,10 @@
 
 .enroll:hover {
     background-color: #023630;
+}
 
-
+.enroll-above:hover {
+    background-color: #023630;
 }
 
 .user-a {
@@ -317,7 +319,7 @@
 }
 
 .winner {
-    top: 570px;
+    top: 680px;
     position: absolute;
     left: 90px;
     width: 100px;
@@ -325,10 +327,25 @@
     border: rgb(198, 169, 2) 5px solid;
 }
 
+.world-cup img {
+    top: 555px;
+    position: absolute;
+    left: 442px;
+    width: 100px;
+    height: 100px;
+    z-index: 5;
+}
+
+.world-cup img:hover {
+
+    left: 95px;
+    width: 20px;
+}
+
 .winner-name {
     font-size: 20px;
     position: absolute;
-    top: 670px;
+    top: 780px;
     left: 421px;
     font-weight: bold;
     width: 150px;

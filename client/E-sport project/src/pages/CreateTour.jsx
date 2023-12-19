@@ -15,9 +15,8 @@ const CreateTour = () => {
     const [userId, setUserId] = useState(null);
 
     useEffect(() => {
-        // Fetch user ID from the API using the token stored in local storage
         const fetchUserId = async () => {
-            const token = localStorage.getItem('accessToken'); // Replace with your actual storage key
+            const token = localStorage.getItem('accessToken');
             if (token) {
                 try {
                     const response = await fetch('http://localhost:3001/users/current', {

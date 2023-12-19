@@ -79,7 +79,7 @@ export default function Login() {
         localStorage.removeItem('accessToken');
         setUserData(null);
         setIsLoggedIn(false);
-        setLoading(false); // Fix the typo here
+        setLoading(false);
     };
 
     return (
@@ -109,7 +109,7 @@ export default function Login() {
 
                                 <button type="submit">Sign In</button>
                             </form>
-                            {errorMessage && <ErrorComponent message={errorMessage} />}
+                            {errorMessage && <p className='error-message'>{errorMessage}</p>}
                             <p className="signup-link">
                                 Don't have an account? <Link to="/register">Sign Up</Link>
                             </p>

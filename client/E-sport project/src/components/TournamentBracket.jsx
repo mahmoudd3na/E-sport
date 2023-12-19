@@ -10,7 +10,7 @@ const TournamentBracket = ({ participants, draw, round2, round3, winner, handleU
     });
     const [round2Matches, setRound2Matches] = useState(null);
     const [round3Matches, setRound3Matches] = useState(null);
-    // let round2Matches = {};
+
     useEffect(() => {
         if (round2) {
             console.log(round2);
@@ -55,7 +55,6 @@ const TournamentBracket = ({ participants, draw, round2, round3, winner, handleU
     };
 
     const handleSubmit = () => {
-        // Assuming you have a backend API endpoint for submitting winners
         const winnersData = Object.values(round1Matches).map((match) => ({
             [match.winner]: draw[match.winner],
         }));
@@ -66,7 +65,6 @@ const TournamentBracket = ({ participants, draw, round2, round3, winner, handleU
         handleUpdateRound1(flattenedObject);
     }
     const handleSubmit2 = () => {
-        // Assuming you have a backend API endpoint for submitting winners
         const winnersData = Object.values(round2Matches).map((match) => ({
             [match.winner]: draw[match.winner],
         }));
@@ -77,7 +75,6 @@ const TournamentBracket = ({ participants, draw, round2, round3, winner, handleU
         handleUpdateRound2(flattenedObject);
     }
     const handleSubmit3 = () => {
-        // Assuming you have a backend API endpoint for submitting winners
         const winnersData = Object.values(round3Matches).map((match) => ({
             [match.winner]: draw[match.winner],
         }));

@@ -1,4 +1,3 @@
-// SignUp.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -14,10 +13,11 @@ export default function Register() {
         picturePreview: null,
     });
 
+    const [successMessage, setSuccessMessage] = useState('');
+
     const handleChange = (e) => {
         const { name, value, type } = e.target;
 
-        // Handle file input separately
         if (type === 'file') {
             const file = e.target.files[0];
             if (file) {
@@ -35,19 +35,16 @@ export default function Register() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Check if passwords match
         if (formData.password !== formData.confirmPassword) {
             alert("Passwords do not match!");
             return;
         }
 
-        // Convert picture to base64 before sending to the database
         const reader = new FileReader();
         reader.onload = async (event) => {
             const base64Image = event.target.result;
 
             try {
-                // Send data (including base64Image) to the database using Axios
                 const response = await axios.post('http://localhost:3001/users/register', {
                     username: formData.username,
                     email: formData.email,
@@ -55,12 +52,21 @@ export default function Register() {
                     picture: base64Image,
                 });
 
-
                 console.log('Registration successful:', response.data);
-                // Add further logic for success (e.g., redirecting to a new page)
+
+                setSuccessMessage('Registration successful!');
+
+                setFormData({
+                    username: '',
+                    email: '',
+                    password: '',
+                    confirmPassword: '',
+                    picture: null,
+                    picturePreview: null,
+                });
+
             } catch (error) {
                 console.error('Registration failed:', error.message);
-                // Add further logic for failure (e.g., displaying an error message)
             }
         };
 
@@ -72,6 +78,7 @@ export default function Register() {
     return (
         <div className="signup-container">
             <h2>Create an Account</h2>
+            {successMessage && <p className="success-message">{successMessage}</p>}
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="username">Username:</label>
@@ -142,9 +149,9 @@ export default function Register() {
                     )}
                 </div>
 
+
                 <button type="submit">Sign Up</button>
             </form>
-
             <p className="signin-link">
                 Already have an account? <Link to="/login">Sign In</Link>
             </p>

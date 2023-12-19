@@ -24,7 +24,6 @@ export default function TourDetails() {
             const response = await fetch(`http://localhost:3001/tournaments/${id}`); // Replace 'your_tournament_api_endpoint' with the actual tournament API endpoint
             const tournamentData = await response.json();
             console.log("tournament data:", tournamentData)
-            // Set the tournament data
             setTour(tournamentData);
 
             // Fetch user data for participants
@@ -36,19 +35,16 @@ export default function TourDetails() {
                 return userData;
             });
 
-            // Set participants based on the fetched user data
             const participantUsers = await Promise.all(participantPromises);
 
             console.log("participants:", participantUsers)
             setParticipants(participantUsers);
 
-            // Fetch user data for organizer
             const organizerUserId = tournamentData.organizer;
             const organizerResponse = await fetch(`http://localhost:3001/users/${organizerUserId}`);
             const organizerUserData = await organizerResponse.json();
             console.log(organizerUserData);
 
-            // Set organizer based on the fetched user data
             setOrganizer(organizerUserData);
         } catch (error) {
             console.error('Error fetching tournament data:', error);
@@ -59,10 +55,8 @@ export default function TourDetails() {
     };
 
     useEffect(() => {
-        // Call the fetch function when the component mounts
         fetchTournamentData();
     }, [id]);
-    // Check if the tournament is found
     if (loading) {
         return <LoadingSpinner />
     }
@@ -71,10 +65,9 @@ export default function TourDetails() {
         return <div>Tournament not found</div>;
     }
 
-    // Rest of your component code...
 
     const handleJoinTournament = async () => {
-        // You need to implement the logic to join the tournament on the backend
+
         const token = localStorage.getItem('accessToken');
         try {
             const response = await fetch(`http://localhost:3001/tournaments/${id}/join`, {
@@ -86,7 +79,6 @@ export default function TourDetails() {
 
             fetchTournamentData();
             if (response.ok) {
-                // Refresh the tournament data after joining
                 console.log("Successfully joined the tournament!");
             } else {
                 console.error("Failed to join the tournament");
@@ -94,83 +86,89 @@ export default function TourDetails() {
         } catch (error) {
             setError('An unexpected error occurred while joining the tournament');
         }
+
     };
     const enrollClass = (participants.length === 0) ? 'enroll-above' : 'enroll';
 
 
 
     const handleUpdateRound1 = async (round2Draw) => {
-        try {
-            const response = await fetch(`http://localhost:3001/tournaments/${id}`, {
-                method: 'PUT',
-                headers: {
-                    Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ round2: round2Draw }),
-            });
+        if (tour.status === "closed") {
 
-            if (!response.ok) {
-                // Handle non-successful response
-                throw new Error(`Error updating tournament: ${response.statusText}`);
+            try {
+                const response = await fetch(`http://localhost:3001/tournaments/${id}`, {
+                    method: 'PUT',
+                    headers: {
+                        Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ round2: round2Draw }),
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Error updating tournament: ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                console.log('Tournament updated successfully:', data);
+                fetchTournamentData();
+
+            } catch (error) {
+                console.error('Error updating tournament:', error.message);
             }
-
-            const data = await response.json();
-            console.log('Tournament updated successfully:', data);
-            fetchTournamentData();
-
-        } catch (error) {
-            console.error('Error updating tournament:', error.message);
         }
     };
     const handleUpdateRound2 = async (round3Draw) => {
-        console.log("round3 :", round3Draw)
-        try {
-            const response = await fetch(`http://localhost:3001/tournaments/${id}`, {
-                method: 'PUT',
-                headers: {
-                    Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ round3: round3Draw }),
-            });
+        if (tour.status === "closed") {
 
-            if (!response.ok) {
-                // Handle non-successful response
-                throw new Error(`Error updating tournament: ${response.statusText}`);
+            try {
+                const response = await fetch(`http://localhost:3001/tournaments/${id}`, {
+                    method: 'PUT',
+                    headers: {
+                        Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ round3: round3Draw }),
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Error updating tournament: ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                console.log('Tournament updated successfully:', data);
+                fetchTournamentData();
+
+            } catch (error) {
+                console.error('Error updating tournament:', error.message);
             }
-
-            const data = await response.json();
-            console.log('Tournament updated successfully:', data);
-            fetchTournamentData();
-
-        } catch (error) {
-            console.error('Error updating tournament:', error.message);
         }
     };
     const handleUpdateRound3 = async (tourWinner) => {
-        console.log("winner :", tourWinner)
-        try {
-            const response = await fetch(`http://localhost:3001/tournaments/${id}`, {
-                method: 'PUT',
-                headers: {
-                    Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ winner: tourWinner }),
-            });
+        if (tour.status === "closed") {
 
-            if (!response.ok) {
-                // Handle non-successful response
-                throw new Error(`Error updating tournament: ${response.statusText}`);
+            console.log("winner :", tourWinner)
+            try {
+                const response = await fetch(`http://localhost:3001/tournaments/${id}`, {
+                    method: 'PUT',
+                    headers: {
+                        Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ winner: tourWinner }),
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Error updating tournament: ${response.statusText}`);
+                }
+
+                const data = await response.json();
+                console.log('Tournament updated successfully:', data);
+                fetchTournamentData();
+
+            } catch (error) {
+                console.error('Error updating tournament:', error.message);
             }
-
-            const data = await response.json();
-            console.log('Tournament updated successfully:', data);
-            fetchTournamentData();
-
-        } catch (error) {
-            console.error('Error updating tournament:', error.message);
         }
     };
 
