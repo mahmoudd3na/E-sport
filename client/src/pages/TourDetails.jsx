@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import "./TourDetails.css";
-import Diagram from '../components/diagram';
+import Diagram from '../components/Diagram';
 import LoadingSpinner from '../components/LoadingSpinner';
 import useCurrentUser from '../Hooks/useCurrentUser';
 import TournamentBracket from '../components/TournamentBracket';
-import axios from "axios";
 
 
 export default function TourDetails() {
@@ -84,7 +83,7 @@ export default function TourDetails() {
                 console.error("Failed to join the tournament");
             }
         } catch (error) {
-            setError('An unexpected error occurred while joining the tournament');
+            throw new Error('An unexpected error occurred while joining the tournament');
         }
 
     };

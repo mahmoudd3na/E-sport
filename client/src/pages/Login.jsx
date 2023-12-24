@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import UserProfile from '../components/UserProfile';
@@ -111,7 +111,7 @@ export default function Login() {
                             </form>
                             {errorMessage && <p className='error-message'>{errorMessage}</p>}
                             <p className="signup-link">
-                                Don't have an account? <Link to="/register">Sign Up</Link>
+                                Dont have an account? <Link to="/register">Sign Up</Link>
                             </p>
                         </div>
                     )}

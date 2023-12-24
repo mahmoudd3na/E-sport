@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './Register.css';
@@ -45,7 +45,7 @@ export default function Register() {
             const base64Image = event.target.result;
 
             try {
-                const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/users/register`, {
+                const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/user/register`, {
                     username: formData.username,
                     email: formData.email,
                     password: formData.password,

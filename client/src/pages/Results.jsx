@@ -1,5 +1,3 @@
-// FinishedTournaments.js
-import React from 'react';
 import { useState, useEffect } from 'react';
 import Tournament from '../components/Tournament';
 import axios from "axios"
@@ -8,18 +6,15 @@ import "./style.css"
 const Results = () => {
 
     const [tournaments, setTournaments] = useState([]);
-    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         axios
             .get(`${import.meta.env.VITE_BASE_URL}/tournaments`)
             .then((response) => {
                 setTournaments(response.data);
-                setLoading(false);
             })
             .catch((error) => {
                 console.error('Error fetching data:', error);
-                setLoading(false);
             });
     }, []);
     const endedTournaments = tournaments.filter((tournament) => tournament.status === 'ended');

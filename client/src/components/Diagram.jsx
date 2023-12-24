@@ -1,7 +1,3 @@
-import React from 'react';
-import { render } from 'react-dom';
-import { Link } from 'react-router-dom';
-
 export default function Diagram({
     participants,
     draw,
@@ -12,7 +8,6 @@ export default function Diagram({
     let renderedDiagram = [];
     let renderedRound2 = [];
     let renderedRound3 = [];
-    let renderedWinner;
 
     // Winners and Losers for each round
     let round2Winners = [];
@@ -22,17 +17,17 @@ export default function Diagram({
     for (let key in draw) {
         if (draw[key] === 0) {
             renderedDiagram.push(
-                <div class={`team user-${key}`}>{`${key.toUpperCase()}`}</div>
+                <div className={`team user-${key}`}>{`${key.toUpperCase()}`}</div>
             );
         } else {
             let user = participants.find((user) => user._id === draw[key]);
             if (!user) {
                 renderedDiagram.push(
-                    <div class={`team user-${key} loading`}>Loading...</div>
+                    <div className={`team user-${key} loading`}>Loading...</div>
                 );
             } else {
                 renderedDiagram.push(
-                    <div class={`team user-${key} filled`}>
+                    <div className={`team user-${key} filled`}>
                         <img src={user.picture} alt="profile-picture" />
                     </div>
                 );
@@ -47,7 +42,7 @@ export default function Diagram({
             if (round2[key] !== 0) {
                 let user = participants.find((user) => user._id === round2[key]);
                 renderedRound2.push(
-                    <div class={`team user-${i}`}>
+                    <div className={`team user-${i}`}>
                         <img src={user.picture} />
                     </div>
                 );
@@ -62,7 +57,7 @@ export default function Diagram({
                 if (round3[key] !== 0) {
                     let user = participants.find((user) => user._id === round3[key]);
                     renderedRound3.push(
-                        <div class={`team final-${i}`}>
+                        <div className={`team final-${i}`}>
                             <img src={user.picture} />
                         </div>
                     );
@@ -88,7 +83,6 @@ export default function Diagram({
                         <p className="winner-name">{user.username}</p>
                     </>
                 );
-            } else {
             }
         }
 
@@ -97,7 +91,7 @@ export default function Diagram({
     return (
         <>
             <img className="diagram" src="/diagramtrans.png" />
-            <div class="tournament-diagram">
+            <div className="tournament-diagram">
                 {renderedDiagram}
 
                 {round2 !== null && renderedRound2}

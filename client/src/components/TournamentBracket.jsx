@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import "./TournamentBracket.css"
 
-const TournamentBracket = ({ participants, draw, round2, round3, winner, handleUpdateRound1, handleUpdateRound2, handleUpdateRound3 }) => {
+const TournamentBracket = ({ draw, round2, round3, winner, handleUpdateRound1, handleUpdateRound2, handleUpdateRound3 }) => {
     const [round1Matches, setRound1Matches] = useState({
         match1: { player1: 'a', player2: 'b', winner: null },
         match2: { player1: 'c', player2: 'd', winner: null },

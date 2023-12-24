@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { RouterProvider, createBrowserRouter, Route } from "react-router-dom"
+import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import './App.css';
 import Layout from './components/Layout';
 import Login from './pages/Login';
@@ -16,7 +15,6 @@ function App() {
     {
       path: "/",
       element: <Layout />,
-      errorElement: <Error />,
       children: [
         {
           index: true,
